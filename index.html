@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My safe home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page-background"></div>
+
+    <div id="home-page" class="container">
+        <h1>My safe home</h1>
+        <p class="subtitle">You are where all roads lead back to</p>
+
+        <!-- مشغل الصوت الآمن المباشر داخل المتصفح بدون نوافذ تحميل -->
+        <div style="margin-bottom: 25px;">
+            <audio id="bg-audio" controls autoplay loop preload="auto" controlsList="nodownload" style="width: 80%; max-width: 300px; accent-color: var(--accent-red); filter: drop-shadow(0 0 8px var(--glow-red));">
+                <source src="Song.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="widget-box">
+            <h3>Movies</h3>
+            <p>Our shared cinematic universe.</p>
+            <button class="btn" onclick="openPage('movies-page')">Watchlist</button>
+        </div>
+
+        <div class="widget-box">
+            <h3>Games</h3>
+            <p>Playtime & virtual worlds.</p>
+            <button class="btn" onclick="openPage('games-page')">Arcade</button>
+        </div>
+
+        <div class="widget-box">
+            <h3>First Date</h3>
+            <p>Where it will begins.</p>
+            <button class="btn" onclick="openPage('first-date-page')">When</button>
+        </div>
+
+        <div class="widget-box">
+            <h3>Wishes</h3>
+            <p>Dreams waiting to be real.</p>
+            <button class="btn" onclick="openPage('wishes-page')">Secret Dreams</button>
+        </div>
+
+        <div class="widget-box">
+            <h3>Places to Visit Together</h3>
+            <p>Destinations for us.</p>
+            <button class="btn" onclick="openPage('places-page')">Our Map</button>
+        </div>
+    </div>
+
+    <div id="movies-page" class="container hidden">
+        <button class="back-btn" onclick="goHome()">← Back</button>
+        <h1>Movies</h1>
+        <p class="subtitle">Our shared cinematic universe.</p>
+
+        <div class="widget-box">
+            <input type="text" id="movie-input" placeholder="Add a new movie...">
+            <button class="btn" onclick="addItem('movie')">Add Movie</button>
+            <p id="movie-empty">No items added yet.</p>
+            <ul id="movie-list" style="list-style: none; padding: 0; text-align: left;"></ul>
+        </div>
+    </div>
+
+    <div id="games-page" class="container hidden">
+        <button class="back-btn" onclick="goHome()">← Back</button>
+        <h1>Games</h1>
+        <p class="subtitle">Playtime & virtual worlds.</p>
+
+        <div class="widget-box">
+            <input type="text" id="game-input" placeholder="Add a game...">
+            <button class="btn" onclick="addItem('game')">Add Game</button>
+            <p id="game-empty">No items added yet.</p>
+            <ul id="game-list" style="list-style: none; padding: 0; text-align: left;"></ul>
+        </div>
+    </div>
+
+    <div id="first-date-page" class="container hidden">
+        <button class="back-btn" onclick="goHome()">← Back</button>
+        <h1>First Date</h1>
+        <p class="subtitle">Where it will begins.</p>
+
+        <div class="widget-box">
+            <input type="text" id="date-input" placeholder="Add a spot...">
+            <button class="btn" onclick="addItem('date')">Add Date</button>
+            <p id="date-empty">No items added yet.</p>
+            <ul id="date-list" style="list-style: none; padding: 0; text-align: left;"></ul>
+        </div>
+    </div>
+
+    <div id="wishes-page" class="container hidden">
+        <button class="back-btn" onclick="goHome()">← Back</button>
+        <h1>Wishes</h1>
+        <p class="subtitle">Dreams waiting to be real.</p>
+
+        <div class="widget-box">
+            <input type="text" id="wish-input" placeholder="Add a wish...">
+            <button class="btn" onclick="addItem('wish')">Add Wish</button>
+            <p id="wish-empty">No items added yet.</p>
+            <ul id="wish-list" style="list-style: none; padding: 0; text-align: left;"></ul>
+        </div>
+    </div>
+
+    <div id="places-page" class="container hidden">
+        <button class="back-btn" onclick="goHome()">← Back</button>
+        <h1>Places to Visit</h1>
+        <p class="subtitle">Destinations for us.</p>
+
+        <div class="widget-box">
+            <input type="text" id="place-input" placeholder="Add a destination...">
+            <button class="btn" onclick="addItem('place')">Add Place</button>
+            <p id="place-empty">No items added yet.</p>
+            <ul id="place-list" style="list-style: none; padding: 0; text-align: left;"></ul>
+        </div>
+    </div>
+
+    <div class="footer-sig">Eternity with you ♥</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
